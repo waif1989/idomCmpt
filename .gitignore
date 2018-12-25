@@ -1,0 +1,15 @@
+node_modules
+node_modules/
+logs
+npm-debug.log
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+.idea
+.cache
+.rpt2_cache
+.project
