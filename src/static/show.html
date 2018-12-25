@@ -51,6 +51,9 @@
         .clear {
             clear: both;
         }
+        #main::-webkit-scrollbar {
+            display: none;
+        }
     </style>
     <script>
 		(function(){
@@ -70,10 +73,10 @@
     </script>
 </head>
 <body>
-<div id="main"></div>
+<div id="main" style="width: 100%;overflow-x: hidden;"></div>
 <script src="./assets/js/incremental-dom-min.js"></script>
 <script src="./assets/js/iDom.base.min.js"></script>
-<script src="./assets/js/iDomCmpt.commons.js"></script>
+<script src="./assets/js/iDomCmpt.min.commons.js"></script>
 
 <script src="./assets/js/Header.min.js"></script>
 <script src="./assets/js/Lottery.min.js"></script>
@@ -93,6 +96,34 @@
                     var p;
                     eval(msg.fn);
                     new Header(p, document.getElementById(id));
+                })();
+                break;
+            case 'Marquee':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new Marquee(p, document.getElementById(id));
+                })();
+                break;
+            case 'LotteryTurntable':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new LotteryTurntable(p, document.getElementById(id));
+                })();
+                break;
+            case 'Lottery':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new Lottery(p, document.getElementById(id));
+                })();
+                break;
+            case 'ScratchCard':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new ScratchCard(p, document.getElementById(id));
                 })();
                 break;
             default:
