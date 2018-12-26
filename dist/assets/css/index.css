@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+}
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #ddd;
+  border-right: 1px solid #333;
+}
+.ui-list {
+  width: 420px;
+  overflow-y: scroll;
+  background-color: #f7f7f7;
+}
+.ui-list li {
+  display: flex;
+  background-color: #fff;
+  margin-bottom: 30px;
+  flex-direction: column;
+  width: 100%;
+}
+.ui-list li .ui-img {
+  display: block;
+  margin-bottom: 20px;
+}
+.ui-list li .ui-introduct {
+  font-size: 18px;
+  color: #333;
+  padding: 10px;
+}
+.ui-list li .ui-config {
+  -webkit-appearance: none;
+  height: 150px;
+  word-wrap: normal;
+}
+.ui-list li .ui-insertbtn {
+  cursor: pointer;
+  display: block;
+  width: 50%;
+  padding: 8px;
+  margin: auto;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.outside {
+  width: 375px;
+  height: 667px;
+  position: relative;
+  overflow-y: scroll;
+  background: #fff;
+}
+.outside::-webkit-scrollbar {
+  display: none;
+}
+.inside {
+  width: 100%;
+}
+.ifr {
+  border: none;
+  padding: 0;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+

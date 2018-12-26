@@ -1,9 +1,14 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+const devMode = process.env.NODE_ENV !== 'production';
+
 const webpackBaseConfig = {
     output: {
-        path: path.resolve('dist')
+        path: path.resolve('dist'),
+        filename: 'assets/js/index.js'
     },
     module: {
         rules: [
@@ -14,14 +19,14 @@ const webpackBaseConfig = {
             }, {
                 test: /\.css$/,
                 use: [
-                    'style-loader',
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader'
                 ],
             },{
 		        test: /\.less$/,
 		        use: [
-			        'style-loader',
-			        'css-loader',
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader',
 			        'less-loader'
 		        ],
 	        }, {
@@ -29,7 +34,9 @@ const webpackBaseConfig = {
                 use: [
                     {
                         loader: 'file-loader',
-                        options: {}
+                        options: {
+                            outputPath: 'assets/img',
+                        }
                     }
                 ]
             }, {
@@ -54,10 +61,14 @@ const webpackBaseConfig = {
 			    ignore: ['.*']
 		    }
 	    ]),
-        // new MiniCssExtractPlugin({
-        //     filename: '[name].css',
-        //     chunkFilename: '[id].css'
-        // })
+        new HtmlWebpackPlugin({
+            template: path.resolve('src/index.html'),
+            chunksSortMode: 'none'
+        }),
+        new MiniCssExtractPlugin({
+            filename: "assets/css/[name].css",
+            chunkFilename: "assets/css/[id].css"
+        })
     ]
 };
 exports = module.exports = webpackBaseConfig;

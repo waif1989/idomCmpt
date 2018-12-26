@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+	<title>test</title>
+<link href="./assets/css/0.css" rel="stylesheet"><link href="./assets/css/index.css" rel="stylesheet"></head>
+<body>
+<div class="container">
+    <div class="content">
+		<div class="outside">
+			<iframe
+					id="ifr"
+					class="ifr"
+					src="./static/show.html"></iframe>
+		</div>
+	</div>
+    <ul class="ui-list">
+        <li>
+	        <div class="ui-introduct">
+		        组件介绍：头部导航组件
+	        </div>
+	        <img
+		        class="ui-img"
+		        src="./assets/img/c748ab2e4e61737b7df75dbbe7581a7d.png">
+	        <p>&nbsp;&nbsp;var props = </p>
+	        <textarea
+		        id="ui-config-com1"
+		        class="ui-config">
+{
+	id: '',
+	bgColor: 'blue',
+	title: '首页',
+	backWord: '返回',
+	backIcon: true,
+	backTo () {
+		// todo
+	}
+};
+	        </textarea>
+	        <div id="com1" class="ui-insertbtn">插入</div>
+        </li>
+	    
+		<li>
+			<div class="ui-introduct">
+				组件介绍：跑马灯组件
+			</div>
+			<img
+				class="ui-img"
+				src="./assets/img/8ba1f17092e9466cb3eb63c547807e8b.png">
+			<p>&nbsp;&nbsp;var props = </p>
+			<textarea
+				id="ui-config-com2"
+				class="ui-config">
+{
+	id: '',
+	itemList: [
+        {
+            nickname: '用户1',
+            prizeName: '奖品1',
+            prizeVal: 100
+        }, {
+            nickname: '用户2',
+            prizeName: '奖品2',
+            prizeVal: 200
+        }, {
+            nickname: '用户3',
+            prizeName: '奖品3',
+            prizeVal: 300
+        }, {
+            nickname: '用户4',
+            prizeName: '奖品4',
+            prizeVal: 400
+        }, {
+            nickname: '用户5',
+            prizeName: '奖品5',
+            prizeVal: 500
+        }
+    ]
+};
+	        </textarea>
+			<div id="com2" class="ui-insertbtn">插入</div>
+		</li>
+	 
+		<li>
+			<div class="ui-introduct">
+				组件介绍：转盘抽奖组件
+			</div>
+			<img
+				class="ui-img"
+				src="./assets/img/d6af12c3f5383df551c091d2d7fc1ea7.png">
+			<p>&nbsp;&nbsp;var props = </p>
+			<textarea
+				id="ui-config-com3"
+				class="ui-config">
+{
+	id: '',
+    rotateNum: 8,
+    direction: 0,
+    prizePosition: 0,
+    prizeNames: ['未中奖', '提高白条额度', '免分期服务费', '5元免单', '10元免单', '50元免单', '4999免单'],
+    prizeTableUrl: 'https://onegoods.nosdn.127.net/resupload/2018/11/26/d8df203bd890696193797540c48b4583.png',
+    prizePointerUrl: 'https://onegoods.nosdn.127.net/resupload/2018/11/26/d5779a5af63ea663333ab957e3a4c1ea.png',
+    prizeTableStyle: '',
+    prizePointerStyle: '',
+    finishCb (val) {
+        console.log('finish:', val);
+    }
+};
+	        </textarea>
+			<div id="com3" class="ui-insertbtn">插入</div>
+		</li>
+		<li>
+			<div class="ui-introduct">
+				组件介绍：九宫格抽奖组件
+			</div>
+			<img
+				class="ui-img"
+				src="./assets/img/feed9eced1a9aad16fc2220018d017b1.png">
+			<p>&nbsp;&nbsp;var props = </p>
+			<textarea
+				id="ui-config-com4"
+				class="ui-config">
+{
+	id: '',
+    lotteryList: ['https://onegoods.nosdn.127.net/resupload/2018/11/30/3fb3245bc3ee5e6492aefec0b6cd84ef.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/43d854c414ac9479cc93f2fa9236f142.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/3a210f988a22add92c093612bcdf47a9.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/e28e66f2d10c2b830d95090fe83df927.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/e96594c0c5dd4adad01192893712eb65.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/3fb3245bc3ee5e6492aefec0b6cd84ef.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/887c3bc1ede747fc1fa362999abbbde7.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/65712c15bde871ed550543a05ceaab78.png','https://onegoods.nosdn.127.net/resupload/2018/11/30/6451b8afe9e0d7ec95cf75aa92fba9e6.png'],
+    runningTurns: 4,
+    runningSpeedTime: 90,
+    prizePositon: 3,
+    containerStyle: 'padding: .2rem;background-color: #2CA57E;border-radius: .15rem;',
+    itemImgStyle: ' width: 95%; height: 95%;'
+};
+	        </textarea>
+			<div id="com4" class="ui-insertbtn">插入</div>
+		</li>
+	    
+	    <li>
+		    <div class="ui-introduct">
+			    组件介绍：刮刮卡组件
+		    </div>
+		    <img
+			    class="ui-img"
+			    src="./assets/img/2724475e14a8276653f4e46eb2048646.png">
+		    <p>&nbsp;&nbsp;var props = </p>
+		    <textarea
+			    id="ui-config-com5"
+			    class="ui-config">
+{
+    prizeNames: '奖品名称',
+    prizeStyle: '',
+    id: '',
+    cardMask: 'https://res.126.net/cross/img/component/scratch-card/mask-default.png',
+    scratchWidth: 60,
+    autoShowPercent: 70,
+    playState: true,
+    sucCb (val) {
+        console.log('suc:', val)
+    },
+    failCb (val) {
+        console.log('fail:', val)
+    }
+};
+	        </textarea>
+		    <div id="com5" class="ui-insertbtn">插入</div>
+	    </li>
+    </ul>
+</div>
+<script type="text/javascript" src="./assets/js/0.index.js"></script><script type="text/javascript" src="./assets/js/index.js"></script></body>
+</html>

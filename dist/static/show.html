@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" />
+    <title>Title</title>
+    <style>
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed,
+        figure, figcaption, footer, header, hgroup,
+        main, menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline;
+        }
+        /* HTML5 display-role reset for older browsers */
+        article, aside, details, figcaption, figure,
+        footer, header, hgroup, main, menu, nav, section {
+            display: block;
+        }
+        body {
+            line-height: 1;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        .clear {
+            clear: both;
+        }
+        #main::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+    <script>
+		(function(){
+			var html = document.documentElement;
+			var body = document.body;
+			window.addEventListener('resize', calc, false);
+			document.addEventListener('DOMContentLoaded', calc, false);
+			calc();
+			function calc(){
+				var width = html.clientWidth || body.clientWidth || window.screen.width || window.innerWidth;
+				if(width) {
+					html.style.fontSize = width / 7.5 + 'px';
+				}
+				html.dataset.dpr = window.devicePixelRatio;
+			}
+		})()
+    </script>
+</head>
+<body>
+<div id="main" style="width: 100%;overflow-x: hidden;"></div>
+<script src="./assets/js/incremental-dom-min.js"></script>
+<script src="./assets/js/iDom.base.min.js"></script>
+<script src="./assets/js/iDomCmpt.min.commons.js"></script>
+
+<script src="./assets/js/Header.min.js"></script>
+<script src="./assets/js/Lottery.min.js"></script>
+<script src="./assets/js/LotteryTurntable.min.js"></script>
+<script src="./assets/js/Marquee.min.js"></script>
+<script src="./assets/js/ScratchCard.min.js"></script>
+<script>
+	window.addEventListener('message', function (ev) {
+	    var msg = JSON.parse(ev.data);
+		var div = document.createElement('div');
+		var id = 'idom-' + (Math.random() * 1000).toFixed(0);
+		div.setAttribute('id', id);
+		document.getElementById('main').appendChild(div);
+        switch (msg.title) {
+            case 'Header':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new Header(p, document.getElementById(id));
+                })();
+                break;
+            case 'Marquee':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new Marquee(p, document.getElementById(id));
+                })();
+                break;
+            case 'LotteryTurntable':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new LotteryTurntable(p, document.getElementById(id));
+                })();
+                break;
+            case 'Lottery':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new Lottery(p, document.getElementById(id));
+                })();
+                break;
+            case 'ScratchCard':
+                (function () {
+                    var p;
+                    eval(msg.fn);
+                    new ScratchCard(p, document.getElementById(id));
+                })();
+                break;
+            default:
+                break;
+        }
+	}, false);
+
+
+
+</script>
+</body>
+</html>

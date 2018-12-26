@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const baseConfig = require('./webpack.base');
 
 exports = module.exports = merge.smart(baseConfig, {
@@ -12,11 +11,7 @@ exports = module.exports = merge.smart(baseConfig, {
         publicPath: '/',
     },
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new HtmlWebpackPlugin({
-            template: path.resolve('template/index.html'),
-            chunksSortMode: 'none'
-        })
+        new webpack.HotModuleReplacementPlugin()
     ],
     devtool: 'source-map',
     devServer: {
