@@ -11,6 +11,7 @@ npm-debug.log
 *.pid
 *.gz
 .idea
+dist
 .cache
 .rpt2_cache
 .project
